@@ -4,11 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>君推しフェス</title>
+    <title>キミ推しフェス</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -33,14 +30,15 @@
 
     <main class="content">
         <div id="overview">
+            <h2>キミ推しフェスvol.64</h2>
             <img class="ex2" src="/img/キミ推しフェス in Zepp(1)のコピー.jpg">
             <h2>overview ~概要~</h2>
             <figure>
                 <img src="img/キミ推しフェスminiフライヤー_20230901.jpg">
-                <figcaption>2021/7/6 ZeppHanedaにて開演
-
-                </figcaption>
+                <figcaption>2021/7/6 ZeppHanedaにて開演</figcaption>
             </figure>
+            <h2 class="text">そもそもキミ推しフェスって何？</h2>
+            <p class="text">説明しようキミ推しフェスとは都内を中心に150規模のライブハウス、俗にいう箱からZeppなどの会場で月2回程度開催しているアイドル対バンイベントで毎回10~40組程度の出演者が出演している今熱いイベントだ</p>
             <p>チケットについて</p>
             <p>Sエリア:¥8000+10 Aエリア:¥5000+10</p>
             <p>Bエリア:¥1000+10 DOOR :¥1500+10</p>
@@ -61,6 +59,30 @@
             </div>
         </div>
 
-</body>
+        <div id="event">
+            <h2>イベント</h2>
 
+        </div>
+
+        <div id="contact">
+            <h2>コンタクト</h2>
+            <p>ご質問やお問い合わせがあれば、以下のフォームからお気軽にご連絡ください。</p>
+            <form  method="post">
+                <label for="name">お名前</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">メールアドレス</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">メッセ-ジ</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <input type="submit" value="送信">
+            </form>
+        </div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="script.js"></script>
 </html>

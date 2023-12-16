@@ -8,6 +8,8 @@ body {
     padding-top: 100px;
 }
 
+/*ヘッダ-*/
+
 .ex1 {
     position: fixed;
     top: 0;
@@ -60,8 +62,6 @@ body {
     top: 31px;
 }
 
-/*activeクラスが付与されると線が回転して×に*/
-
 .openbtn.active span:nth-of-type(1) {
     top: 18px;
     left: 18px;
@@ -85,22 +85,20 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: white;
-    /* メニューが開いたときの背景色を設定 */
     z-index: 998;
 }
 
 #global_nav.show {
-    left: 0;
-    /* right: 0; を削除 */
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
     top: 60px;
     right: 0;
-    /* 追加: 右端に寄せるために右の位置を指定 */
     background-color: #fff;
     border: 1px solid #ddd;
     z-index: 998;
@@ -108,14 +106,24 @@ body {
 
 #global_nav ul {
     list-style: none;
-    padding: 0;
+    padding: 1.5rem;
     margin: 0;
     display: flex;
-    /* 追加：横並びに配置 */
+    flex-direction: column; 
+    align-items: center; 
 }
 
 #global_nav li {
     padding: 10px;
+    text-align: center;
+    margin: 0 15px;
+    position: relative;
+}
+
+
+#global_nav li:not(:last-child)::after {
+    color: #3498db; /* パステルブルー */
+    margin: 0 5px; /* 縦線の間隔を調整 */
 }
 
 /* 追加：大きな画面で非表示 */
@@ -129,6 +137,8 @@ body {
     }
 }
 
+/*概要*/
+
 #overview h2 {
     text-align: center;
     padding: 2rem;
@@ -139,6 +149,10 @@ body {
 #overview p,
 #like p {
     text-align: center;
+}
+
+.text {
+    padding: 1rem;
 }
 
 .ex2 {
@@ -174,9 +188,36 @@ figcaption {
     line-height: 4rem;
 }
 
+/* メディアクエリ */
+@media only screen and (max-width: 800px) {
+    #overview h2 {
+        padding: 1rem;
+    }
+
+    #overview img,
+    #like img,
+    #overview p,
+    #like p {
+        text-align: center;
+    }
+
+    .ex2 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 801px) {
+    #overview p {
+        max-width: 800px;
+        margin: auto;
+    }
+}
+
+/*アイドル*/
+
 #idol h2 {
     text-align: center;
-    padding: 2rem;
+    padding: 5rem;
 }
 
 .slide-container {
@@ -205,4 +246,50 @@ figcaption {
     100% {
         transform: translateX(-100%);
     }
+}
+
+#contact {
+    margin: 30px 0;
+    padding: 20px;
+    background-color: #f7f7f7;
+}
+
+#contact h2 {
+    color: #3498db; 
+    text-align: center;
+}
+
+#contact p {
+    font-size: 16px;
+    color: #2c3e50; 
+}
+
+#contact form {
+    margin-top: 20px;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 8px;
+    color: #9b59b6; 
+    text-align: center;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ecf0f1; 
+    border-radius: 5px;
+}
+
+#contact input[type="submit"] {
+    background-color: #1abc9c; 
+    color: #fff;
+    cursor: pointer;
+}
+
+#contact input[type="submit"]:hover {
+    background-color: #16a085; 
 }
